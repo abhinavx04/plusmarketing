@@ -43,6 +43,8 @@
     --chart-4: 238 40% 60%;
     --chart-5: 230 55% 70%;
     --radius: 0.5rem;
+    --highlight: 53 97% 66%; /* Yellow highlight color */
+    --glow: 53 97% 66%; /* Yellow glow color */
   }
   .dark {
     --background: 222 47% 11%;
@@ -103,4 +105,35 @@ html {
 @keyframes slideUp {
   0% { transform: translateY(50px); opacity: 0; }
   100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(0%) rotate(-45deg);
+  }
+  100% {
+    transform: translateX(200%) rotate(-45deg);
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right 3s ease-in-out infinite;
+}
+
+@layer utilities {
+  .yellow-glow {
+    box-shadow: 0 0 20px 2px hsl(var(--glow) / 0.3),
+                0 0 40px 4px hsl(var(--glow) / 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px hsl(var(--glow) / 0.5);
+  }
+
+  .yellow-gradient {
+    background: linear-gradient(135deg, 
+      hsl(var(--glow) / 0.1) 0%,
+      transparent 100%
+    );
+  }
 }

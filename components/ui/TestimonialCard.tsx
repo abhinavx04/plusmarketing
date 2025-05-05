@@ -13,7 +13,7 @@ interface TestimonialCardProps {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <div className="bg-background rounded-lg p-6 shadow-lg h-full flex flex-col">
+    <div className="bg-background rounded-lg p-6 shadow-lg h-full flex flex-col hover:yellow-glow transition-all duration-300">
       <div className="flex items-center mb-4">
         <div className="relative w-12 h-12 rounded-full overflow-hidden mr-4">
           <Image

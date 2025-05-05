@@ -1,5 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Metadata } from "next";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About Us | Plus Marketing Car Dealership",
@@ -9,8 +12,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="container mx-auto px-4 py-12 md:py-24">
+      {/* Updated header section with flex layout */}
+      <div className="flex justify-between items-center mb-16">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="flex items-center gap-2 hover:bg-background/80"
+          asChild
+        >
+          <Link href="/">
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
+        </Button>
+
+        <h1 className="text-4xl md:text-6xl font-bold">About Plus Marketing</h1>
+      </div>
+
       <section className="mb-16">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8">About Plus Marketing</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Our Story</h2>

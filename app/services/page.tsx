@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { Check } from "lucide-react";
+import Link from "next/link";
+import { Check, ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Our Services | Plus Marketing Car Dealership",
@@ -10,8 +12,23 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main className="container mx-auto px-4 py-12 md:py-24">
+      <div className="flex justify-between items-center mb-16">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="flex items-center gap-2 hover:bg-background/80"
+          asChild
+        >
+          <Link href="/">
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
+        </Button>
+
+        <h1 className="text-4xl md:text-6xl font-bold">Our Services</h1>
+      </div>
+
       <section className="mb-16">
-        <h1 className="text-4xl md:text-6xl font-bold mb-8">Our Services</h1>
         <p className="text-xl text-muted-foreground max-w-3xl mb-12">
           At Plus Marketing, we offer comprehensive automotive solutions to meet all your vehicle needs, from finding your dream car to maintaining it in peak condition.
         </p>

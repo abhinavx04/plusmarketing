@@ -64,6 +64,11 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/30 z-10" />
       </div>
 
+      {/* Add animated yellow beam */}
+      <div className="absolute inset-0 z-10 overflow-hidden">
+        <div className="absolute -rotate-45 w-[200px] h-[800px] top-1/2 -left-96 yellow-glow bg-yellow-400/10 blur-3xl animate-slide-right" />
+      </div>
+
       <div className="container mx-auto px-4 relative z-20">
         <div 
           className={cn(
@@ -74,7 +79,7 @@ export default function HeroSection() {
           <div className="space-y-20">
             <h1 
               ref={headingRef}
-              className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mt-8"
+              className="text-5xl md:text-7xl font-bold text-white tracking-tight leading-[1.1] mt-8 text-glow"
             >
               Discover Your Perfect Vehicle
             </h1>
@@ -90,7 +95,7 @@ export default function HeroSection() {
             <Button 
               onClick={() => scrollToElement('contact')}
               size="lg" 
-              className="text-base bg-white text-black hover:bg-white/90 px-8 py-6 text-lg font-semibold"
+              className="text-base bg-yellow-400 text-black hover:bg-yellow-500 px-8 py-6 text-lg font-semibold yellow-glow"
             >
               Contact Us
             </Button>
